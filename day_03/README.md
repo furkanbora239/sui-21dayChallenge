@@ -9,6 +9,8 @@ Today you'll learn:
 
 ## Understanding Structs
 
+Structs are like classes 
+
 A **struct** is a custom data type that groups related data together. Think of it as a container that holds multiple pieces of information.
 
 For example, a `Habit` struct might contain:
