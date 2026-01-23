@@ -8,7 +8,6 @@
 /// Note: You can copy code from day_06/sources/solution.move if needed
 
 module challenge::day_07 {
-    use std::vector;
     use std::string::{Self, String};
 
     // Copy from day_06: Habit struct with String
