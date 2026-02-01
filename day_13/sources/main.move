@@ -8,9 +8,7 @@
 /// Note: You can copy code from day_12/sources/solution.move if needed
 
 module challenge::day_13 {
-    use std::vector;
     use std::string::String;
-    use std::option::{Self, Option};
 
     // Copy from day_12: All structs and functions
     public enum TaskStatus has copy, drop {

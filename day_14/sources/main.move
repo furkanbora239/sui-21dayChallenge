@@ -100,9 +100,44 @@ module challenge::day_14 {
     // - Create board, add multiple tasks with different rewards
     // - Verify total_reward is correct
     // 
-    // #[test]
-    // fun test_create_board_and_add_task() {
-    //     // Your code here
-    // }
+    #[test]
+    fun test_create_board_and_add_task() {
+        // Your code here
+        let mut board = new_board(@0x1);
+        let task1 = new_task("random task", 10);
+        let task2 = new_task("not so random task", 15);
+        add_task(&mut board, task1);
+        add_task(&mut board, task2);
+
+        assert!(vector::length(&board.tasks) == 2, 1);
+    }
+
+    #[test]
+    fun test_complete_task() {
+        // Your code here
+        let mut board = new_board(@0x1);
+        let task1 = new_task("random task", 10);
+        let task2 = new_task("not so random task", 15);
+        add_task(&mut board, task1);
+        add_task(&mut board, task2);
+
+        complete_task(&mut board.tasks[0]);
+
+        assert!(&board.tasks[0].status == TaskStatus::Completed, 2);
+    }
+
+    #[test]
+    fun test_total_reward() {
+        // Your code here
+        let mut board = new_board(@0x1);
+        let task1 = new_task("random task", 10);
+        let task2 = new_task("not so random task", 15);
+        add_task(&mut board, task1);
+        add_task(&mut board, task2);
+
+        complete_task(&mut board.tasks[0]);
+
+        assert!(total_reward(&board) == 25, 3);
+    }
 }
 
